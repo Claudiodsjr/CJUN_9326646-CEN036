@@ -67,4 +67,22 @@ else:
 
 print('##############################################################')
 
+#No caso da sequência do CDS 1 iniciar com códon ATG e da sequência CDS 2 terminar com uma das três possíveis sequência, sendo TAG, TAA ou TGA, concatenar ambas as sequências.
+
+if cds1[:3] == 'ATG':
+	print('Na sequência CDS 1, o códon inicial é {0}, agora, a verificação de CDS 2:'.format(cds1[:3]))
+	if cds2[-3:] == 'TAG':
+		print('A sequência CDS 2 termina com {0}, por tanto, concatenando as sequências temos: {1}!'.format(cds2[-3:], cds1 + cds2)) 
+	elif cds2[-3:] == 'TAA':
+		print('A sequência CDS 2 termina com {0}, por tanto, concatenando as sequências temos: {1}!'.format(cds2[-3:], cds1 + cds2))
+	elif cds2[-3:] == 'TGA':
+		print('A sequência CDS 2 termina com {0}, por tanto, concatenando as sequências temos: {1}!'.format(cds2[-3:], cds1 + cds2))
+	else:
+		print('A sequência CDS 2 não termina com nenhuma das três opções de códon (TAG, TAA ou TGA), ela termina com o códon {0}, por tanto, não faremos a concatenação das sequências CDS 1 e CDS 2.'.format(cds2[-3:]))
+else:
+	print('A sequência CDS 1 não se inicia com o códon ATG, ela se inicia com o códon {0}, por tanto, não faremos a concatenação das sequências CDS 1 e CDS 2.'.format(cds2[-3:]))
+
+
+
+
 

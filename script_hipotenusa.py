@@ -8,12 +8,14 @@ if sys.argv[1].isdigit() == True and sys.argv[2].isdigit() == True:
 	number1 = int(sys.argv[1]) 
 	number2 = int(sys.argv[2])
 	print('As variáveis são numéricas.')
+	print('A primeira variável é um número inteiro?', isinstance(number1, int))
+	print('A segunda variável é um número inteiro?', isinstance(number2, int))
 	if 0 <= number1 < 1000 and 0 <= number2 < 1000:
 		hip = math.sqrt((number1**2) + (number2**2))
 		print('O quadrado da hipotenusa do triângulo retângulo com os lados a = {0} e b = {1}, é {2}.'.format(number1, number2, round(hip, 2)))
 	else:
 		print('As variáveis não atendem aos requisitos!')
 else:
-	print('Variáveis não numéricas ou negativas.')
+	print('Variáveis não numéricas, não inteiras ou negativas.')
 
 
