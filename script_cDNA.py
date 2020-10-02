@@ -9,7 +9,7 @@ if sys.argv[2].isdigit() == True and sys.argv[3].isdigit() == True and sys.argv[
 	n2 = int(sys.argv[3])
 	n3 = int(sys.argv[4])
 	n4 = int(sys.argv[5])
-	print('As estradas numéricas estão corretas!')
+	print('As entradas numéricas estão corretas!')
 else:
 	print('Ao menos uma das variáveis que deveriam ser numéricas, não é, confira e tente novamente.')
 
