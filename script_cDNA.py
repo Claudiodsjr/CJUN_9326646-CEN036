@@ -40,7 +40,7 @@ print('##############################################################')
 
 #Extraindo a sequência CDS 1 e conferindo se inicia com o códon ATG, lembrando que como a contagem se inicia no 0, se a cordenada começa no 20, inciaindo no 1, temos que ustilizar 19 quando inicia no 0.
 
-cds1 = dnas[(n1 - 1):(n2 - 1)]
+cds1 = dnas[(n1 - 1):(n2)]
 
 print('A sequência CDS 1 é: {0}!'.format(cds1))
 
@@ -53,7 +53,7 @@ print('##############################################################')
 
 #Extraindo a sequência CDS 2 e conferindo se termina com um dos códons de parada, TAG, TAA ou TGA.
 
-cds2 = dnas[(n3 - 1):(n4 - 1)]
+cds2 = dnas[(n3 - 1):(n4)]
 print('A sequência CDS 2 é: {0}'.format(cds2))
 
 if cds2[-3:] == 'TAG':
