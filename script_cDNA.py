@@ -38,32 +38,40 @@ else:
 
 print('##############################################################')
 
-#Extraindo a sequência CDS 1 e conferindo se inicia com o códon ATG, lembrando que como a contagem se inicia no 0, se a cordenada começa no 20, inciaindo no 1, temos que ustilizar 19 quando inicia no 0.
+#Extraindo a sequência CDS 1 e conferindo se inicia com o códon ATG, lembrando que como a contagem se inicia no 0, se a cordenada começa no 20, inciaindo no 1, temos que ustilizar 19 quando inicia no 0. A extração só será realizada se os valores estiverem dentro do limite de componentes da sequência.
 
 cds1 = dnas[(n1 - 1):(n2)]
 
 print('A sequência CDS 1 é: {0}!'.format(cds1))
-
-if cds1[:3] == 'ATG':
-	print('O códon de início de CDS1 é ATG.')
+if n1 <= count and n2 <= count and n3 <= count and n4 <= count:
+	print('As variáveis {0}, {1}, {2} e {3} são menores que a sequência, que possui um total de {4} componentes.'.format(n1, n2, n3, n4, count))
+	if cds1[:3] == 'ATG':
+		print('O códon de início de CDS1 é ATG.')
+	else:
+		print('O códon de início de CDS1 não é ATG, ele é {0}.'.format(cds1[:3]))
 else:
-	print('O códon de início de CDS1 não é ATG, ele é {0}.'.format(cds1[:3]))
+	print('Pelo menos uma das variáveis ({0}, {1}, {2}, {3}) possui valor maior que o limite da sequência ({4})!'.format(n1, n2, n3, n4, count))
 
 print('##############################################################')
 
-#Extraindo a sequência CDS 2 e conferindo se termina com um dos códons de parada, TAG, TAA ou TGA.
+#Extraindo a sequência CDS 2 e conferindo se termina com um dos códons de parada, TAG, TAA ou TGA caso os valores estejam dentro do limite de itens da sequência.
 
 cds2 = dnas[(n3 - 1):(n4)]
 print('A sequência CDS 2 é: {0}'.format(cds2))
 
-if cds2[-3:] == 'TAG':
-	print('A sequência CDS 2 termina com o códon {0}, que é um dos três possíveis (TAG, TAA ou TGA).'.format(cds2[-3:]))
-elif cds2[-3:] == 'TAA':
-	 print('A sequência CDS 2 termina com o códon {0}, que é um dos três possíveis (TAG, TAA ou TGA).'.format(cds2[-3:]))
-elif cds2[-3:] == 'TGA':
-	 print('A sequência CDS 2 termina com o códon {0}, que é um dos três possíveis (TAG, TAA ou TGA).'.format(cds2[-3:]))
+if n1 <= count and n2 <= count and n3 <= count and n4 <= count:
+	print('As variáveis {0}, {1}, {2} e {3} são menores que a sequência, que possui um total de {4} componentes.'.format(n1, n2, n3, n4, count))
+	if cds2[-3:] == 'TAG':
+		print('A sequência CDS 2 termina com o códon {0}, que é um dos três possíveis (TAG, TAA ou TGA).'.format(cds2[-3:]))
+	elif cds2[-3:] == 'TAA':
+		print('A sequência CDS 2 termina com o códon {0}, que é um dos três possíveis (TAG, TAA ou TGA).'.format(cds2[-3:]))
+	elif cds2[-3:] == 'TGA':
+		print('A sequência CDS 2 termina com o códon {0}, que é um dos três possíveis (TAG, TAA ou TGA).'.format(cds2[-3:]))
+	else:
+		print('A sequência CDS 2 não termina com nenhuma das três opções de códon, ela termina com o códon {0}.'.format(cds2[-3:]))
 else:
-	print('A sequência CDS 2 não termina com nenhuma das três opções de códon, ela termina com o códon {0}.'.format(cds2[-3:]))
+	print('Pelo menos uma das variáveis ({0}, {1}, {2}, {3}) possui valor maior que o limite da sequência ({4})!'.format(n1, n2, n3, n4, count))
+
 
 print('##############################################################')
 
@@ -83,6 +91,4 @@ else:
 	print('A sequência CDS 1 não se inicia com o códon ATG, ela se inicia com o códon {0}, por tanto, não faremos a concatenação das sequências CDS 1 e CDS 2.'.format(cds2[-3:]))
 
 
-
-
-
+print('##############################################################')
