@@ -50,7 +50,7 @@ if n1 <= count and n2 <= count and n3 <= count and n4 <= count:
 	else:
 		print('O códon de início de CDS1 não é ATG, ele é {0}.'.format(cds1[:3]))
 else:
-	print('Pelo menos uma das variáveis ({0}, {1}, {2}, {3}) possui valor maior que o limite da sequência ({4})!'.format(n1, n2, n3, n4, count))
+	print('Pelo menos uma das variáveis ({0}, {1}, {2}, {3}) possui valor maior que o limite da sequência ({4}), corrija e tente novamente para obter os fragmentos da sequência!!'.format(n1, n2, n3, n4, count))
 
 print('##############################################################')
 
@@ -70,7 +70,7 @@ if n1 <= count and n2 <= count and n3 <= count and n4 <= count:
 	else:
 		print('A sequência CDS 2 não termina com nenhuma das três opções de códon, ela termina com o códon {0}.'.format(cds2[-3:]))
 else:
-	print('Pelo menos uma das variáveis ({0}, {1}, {2}, {3}) possui valor maior que o limite da sequência ({4})!'.format(n1, n2, n3, n4, count))
+	print('Pelo menos uma das variáveis ({0}, {1}, {2}, {3}) possui valor maior que o limite da sequência ({4}), corrija e tente novamente para obter os fragmentos da sequência!'.format(n1, n2, n3, n4, count))
 
 
 print('##############################################################')
